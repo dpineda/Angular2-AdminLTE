@@ -1,7 +1,13 @@
 import {Component} from 'angular2/core';
+import {HeaderComponent} from './header.component'
 
 @Component({
     selector: 'my-app',
-    template: '<h1>Angular2 - Admin LTE</h1>'
+    template: `<app-header></app-header>
+    {{title}}
+    `,
+    directives: [HeaderComponent]
 })
-export class AppComponent { }
+export class AppComponent {
+    public title = 'Angular2 - Admin LTE';
+}
