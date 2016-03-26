@@ -74,10 +74,19 @@ import {Component} from 'angular2/core';
         <li class="footer">
         <a href="#">View all tasks</a>
         </li>
-    </ul>`    
+    </ul>`,
+    host: {
+        "(click)": "toggle()",
+        "[class.open]": "open"
+    }
 })
  
 /**
  * TasksComponent
  */
-export class TasksComponent { }
+export class TasksComponent {
+    public open = false;
+    public toggle = () => {
+        this.open = !this.open;
+    }    
+}

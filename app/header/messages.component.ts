@@ -3,6 +3,7 @@ import {Component} from 'angular2/core';
 @Component({
     selector: '[messages]', 
     template: `
+    <!-- Messages: style can be found in dropdown.less-->          
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
         <i class="fa fa-envelope-o"></i>
         <span class="label label-success">4</span>
@@ -77,10 +78,19 @@ import {Component} from 'angular2/core';
         </li>
         <li class="footer"><a href="#">See All Messages</a></li>
     </ul>
-    `
+    `,
+    host: {
+        "(click)": "toggle()",
+        "[class.open]": "open"
+    }
 })
  
 /**
  * MessagesComponent
  */
-export class MessagesComponent { }
+export class MessagesComponent {
+    public open = false;
+    public toggle = () => {
+        this.open = !this.open;
+    }
+}

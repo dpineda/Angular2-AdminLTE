@@ -43,10 +43,19 @@ import {Component} from 'angular2/core';
         </li>
         <li class="footer"><a href="#">View all</a></li>
     </ul> 
-    `
+    `,
+    host: {
+        "(click)": "toggle()",
+        "[class.open]": "open"
+    }
 })
 
 /**
  * NotificationsComponent
  */
-export class NotificationsComponent { }
+export class NotificationsComponent { 
+    public open = false;
+    public toggle = () => {
+        this.open = !this.open;
+    }
+}

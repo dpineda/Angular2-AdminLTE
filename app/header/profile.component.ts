@@ -43,7 +43,19 @@ import {Component} from 'angular2/core';
         </div>
         </li>
     </ul>
-    `   
+    `,
+    host: {
+        "(click)": "toggle()",
+        "[class.open]": "open"
+    } 
 })
 
-export class ProfileComponent { }
+/**
+ * ProfileComponent
+ */
+export class ProfileComponent {
+    public open = false;
+    public toggle = () => {
+        this.open = !this.open;
+    }
+}

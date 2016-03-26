@@ -24,11 +24,10 @@ import {MessagesComponent} from './messages.component'
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          <!-- Messages: style can be found in dropdown.less-->
-          <li messages [class.open]="messages.open" (click)="messages.toggle()" class="dropdown messages-menu"></li>
-          <li notifications [class.open]="notifications.open" (click)="notifications.toggle()" class="dropdown notifications-menu"></li>
-          <li tasks [class.open]="tasks.open" (click)="tasks.toggle()" class="dropdown tasks-menu"></li>
-          <li profile [class.open]="profile.open" (click)="profile.toggle()" class="dropdown user user-menu"></li>
+          <li messages class="dropdown messages-menu"></li>
+          <li notifications class="dropdown notifications-menu"></li>
+          <li tasks class="dropdown tasks-menu"></li>
+          <li profile class="dropdown user user-menu"></li>
           <!-- Control Sidebar Toggle Button -->
           <li><a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a></li>
         </ul>
@@ -44,34 +43,9 @@ import {MessagesComponent} from './messages.component'
     ]
 })
 
+/**
+ * HeaderComponent
+ */
 export class HeaderComponent {
-    public tasks = { 
-        open: false,
-        toggle: () => {
-            this.tasks.open = !this.tasks.open;
-        }
-    };
-    
-    public notifications = { 
-        open: false,
-        toggle: () => {
-            this.notifications.open = !this.notifications.open;
-        }
-    };
-    
-    public profile = {
-        open: false,
-        toggle: () => {
-            this.profile.open = !this.profile.open;
-        } 
-    }
-    
-    public messages = {
-        open: false,
-        toggle: () => {
-            this.messages.open = !this.messages.open;
-        } 
-    }
-    
     constructor(){ } 
 }
